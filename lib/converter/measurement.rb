@@ -53,6 +53,7 @@ module Converter
 
     available_units.each do |unit|
       define_method "to_#{unit}" do
+        raise Converter::WrongConversionTypeError if CONVERTER_UNITS[unit.to_sym][:type] != CONVERTER_UNITS[self.unit.to_sym][:type]
         return Measurement.new(self.value / CONVERTER_UNITS[unit.to_sym][:multiplier] * CONVERTER_UNITS[self.unit.to_sym][:multiplier], unit)
       end
     end
@@ -65,4 +66,6 @@ module Converter
       end
     end
   end
+
+  class WrongConversionTypeError < StandardError; end
 end

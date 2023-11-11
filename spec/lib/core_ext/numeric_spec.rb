@@ -27,6 +27,14 @@ describe Numeric do
     it 'converts inches to cm' do
       expect(10.inch.to_cm.value).to eq(10 * Converter::Measurement::INCH_IN_MM / 10)
     end
+
+    it 'should raise an exception when use different types' do
+      expect {10.inch.to_liter}.to raise_error(Converter::WrongConversionTypeError)
+    end
+
+    it 'should raise an exception when use unknown unit' do
+      expect {10.inch.to_appleseeds}.to raise_error(NoMethodError)
+    end
   end
 
   describe 'conversion using default units' do
