@@ -23,3 +23,6 @@ module Converter
     end
   end
 end
+
+require 'converter/measurement'
+require 'converter/core_ext/numeric'
