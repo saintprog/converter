@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'converter'
 
 describe Numeric do
@@ -29,11 +31,11 @@ describe Numeric do
     end
 
     it 'should raise an exception when use different types' do
-      expect {10.inch.to_liter}.to raise_error(Converter::WrongConversionTypeError)
+      expect { 10.inch.to_liter }.to raise_error(Converter::WrongConversionTypeError)
     end
 
     it 'should raise an exception when use unknown unit' do
-      expect {10.inch.to_appleseeds}.to raise_error(NoMethodError)
+      expect { 10.inch.to_appleseeds }.to raise_error(NoMethodError)
     end
   end
 

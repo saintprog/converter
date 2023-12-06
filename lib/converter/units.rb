@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 module Converter
   module Units
-
     INCH_IN_MM = 25.4
 
     PERCH_IN_SQM = 25.29285
@@ -27,7 +28,7 @@ module Converter
       liter:         {multiplier: 1e3,                        type: 'volume'},
       cubic_m:       {multiplier: 1e6,                        type: 'volume'},
       cubic_km:      {multiplier: 1e9,                        type: 'volume'},
-      cubic_inch:    {multiplier: (INCH_IN_MM)**3,            type: 'volume'},
+      cubic_inch:    {multiplier: INCH_IN_MM**3,              type: 'volume'},
       cubic_foot:    {multiplier: (12*INCH_IN_MM)**3,         type: 'volume'},
       cubic_yard:    {multiplier: (3*12*INCH_IN_MM)**3,       type: 'volume'},
       cubic_mile:    {multiplier: (1760*3*12*INCH_IN_MM)**3,  type: 'volume'},
@@ -45,7 +46,7 @@ module Converter
       hectare:       {multiplier: 1e10,                       type: 'area'},
       square_km:     {multiplier: 1e12,                       type: 'area'},
 
-      square_inch:   {multiplier: (INCH_IN_MM)**2,            type: 'area'},
+      square_inch:   {multiplier: INCH_IN_MM**2,              type: 'area'},
       square_foot:   {multiplier: (12*INCH_IN_MM)**2,         type: 'area'},
       square_yard:   {multiplier: (3*12*INCH_IN_MM)**2,       type: 'area'},
       square_mile:   {multiplier: (1760*3*12*INCH_IN_MM)**2,  type: 'area'},
@@ -66,7 +67,7 @@ module Converter
       stone:         {multiplier: POUND_IN_GRAMS*14,          type: 'mass'},
       quarter:       {multiplier: POUND_IN_GRAMS*28,          type: 'mass'},
       hundredweight: {multiplier: POUND_IN_GRAMS*112,         type: 'mass'},
-      ton:           {multiplier: POUND_IN_GRAMS*2240,        type: 'mass'},
-    }
+      ton:           {multiplier: POUND_IN_GRAMS*2240,        type: 'mass'}
+    }.freeze
   end
 end

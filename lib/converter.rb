@@ -1,9 +1,15 @@
+# frozen_string_literal: true
+
+# Module Converter provides default units configuration
+#
+# @author Mikhail Bobryshev <saintprog@gmail.com>
+#
 module Converter
   class << self
     attr_writer :default_length_unit, :default_mass_unit, :default_volume_unit, :default_area_unit
 
     def default_length_unit
-      @default_length_unit || 'm'
+      @default_length_unit || 'meter'
     end
 
     def default_mass_unit

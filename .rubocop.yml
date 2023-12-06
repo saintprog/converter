@@ -1,0 +1,28 @@
+# Common configuration.
+AllCops:
+  NewCops: enable
+
+Layout/LineLength:
+  Exclude:
+    - 'converter.gemspec'
+
+Gemspec/RequiredRubyVersion:
+  Exclude:
+    - 'converter.gemspec'
+
+Layout/HashAlignment:
+  Exclude:
+    - 'lib/converter/units.rb'
+Layout/SpaceInsideHashLiteralBraces:
+  Exclude:
+    - 'lib/converter/units.rb'
+Layout/SpaceAroundOperators:
+  Exclude:
+    - 'lib/converter/units.rb'
+Layout/SpaceInsideHashLiteralBraces:
+  Exclude:
+    - 'lib/converter/units.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
