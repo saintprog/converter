@@ -24,14 +24,10 @@ bundle install
 ### Configuration
 
 Configuration enables to set default units for different types of measurements
-To generate configuration file run:
-```
-rails g converter:install
-```
-This command will generate a new config file `config/converter.rb` looking like this:
+To configure gem add this block to your application boot file:
 
 ```ruby
-Converter::GlobalConfig.config do |c|
+Converter.config do |c|
   c.default_length_unit = 'meter'
   c.default_mass_unit = 'gram'
   c.default_area_unit = 'square_meter'
